@@ -3,6 +3,7 @@ package com.gp.vaadin.demo.hotel;
 import com.gp.vaadin.demo.hotel.view.CategoryView;
 import com.vaadin.data.Binder;
 import com.vaadin.data.ValidationException;
+import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.Sizeable;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
@@ -10,6 +11,7 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.Notification.Type;
+import com.vaadin.ui.themes.ValoTheme;
 
 public class CategoryEditForm extends FormLayout{
 
@@ -30,6 +32,11 @@ public class CategoryEditForm extends FormLayout{
 		
 		buttons.addComponents(save, close);
 		addComponents(name,buttons);
+		
+		save.setStyleName(ValoTheme.BUTTON_BORDERLESS_COLORED);
+		save.setIcon(VaadinIcons.CHECK);
+		close.setStyleName(ValoTheme.BUTTON_BORDERLESS_COLORED);
+		close.setIcon(VaadinIcons.CLOSE);
 		
 		name.setWidth(100, Sizeable.Unit.PERCENTAGE);
 		save.setWidth(100, Sizeable.Unit.PERCENTAGE);

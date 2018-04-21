@@ -10,6 +10,7 @@ import com.vaadin.data.ValidationResult;
 import com.vaadin.data.Validator;
 import com.vaadin.data.ValueContext;
 import com.vaadin.data.converter.StringToIntegerConverter;
+import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.Sizeable;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.DateField;
@@ -20,6 +21,7 @@ import com.vaadin.ui.Notification;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.Notification.Type;
+import com.vaadin.ui.themes.ValoTheme;
 
 
 public class HotelEditForm extends FormLayout {
@@ -53,6 +55,11 @@ public class HotelEditForm extends FormLayout {
 		HorizontalLayout buttons = new HorizontalLayout();
 		buttons.addComponents(save, close);
 		addComponents(name, address, rating, operatesFrom, category, url, description, buttons);
+		
+		save.setStyleName(ValoTheme.BUTTON_BORDERLESS_COLORED);
+		save.setIcon(VaadinIcons.CHECK);
+		close.setStyleName(ValoTheme.BUTTON_BORDERLESS_COLORED);
+		close.setIcon(VaadinIcons.CLOSE);
 		
 		name.setWidth(100, Sizeable.Unit.PERCENTAGE);
 		address.setWidth(100, Sizeable.Unit.PERCENTAGE);

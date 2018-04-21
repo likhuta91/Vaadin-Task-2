@@ -14,6 +14,7 @@ import com.gp.vaadin.demo.hotel.HotelEditForm;
 import com.gp.vaadin.demo.hotel.HotelService;
 import com.gp.vaadin.demo.hotel.HotelUI;
 import com.gp.vaadin.demo.hotel.MenuNavigator;
+import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.shared.ui.ValueChangeMode;
@@ -27,6 +28,7 @@ import com.vaadin.ui.Notification;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.renderers.HtmlRenderer;
+import com.vaadin.ui.themes.ValoTheme;
 
 public class HotelView extends VerticalLayout implements View {
 
@@ -57,6 +59,13 @@ public class HotelView extends VerticalLayout implements View {
 		
 		deleteHotel.setEnabled(false);
 		editHotel.setEnabled(false);
+		
+		addHotel.setStyleName(ValoTheme.BUTTON_BORDERLESS_COLORED);
+		addHotel.setIcon(VaadinIcons.PLUS);
+		deleteHotel.setStyleName(ValoTheme.BUTTON_BORDERLESS_COLORED);
+		deleteHotel.setIcon(VaadinIcons.TRASH);
+		editHotel.setStyleName(ValoTheme.BUTTON_BORDERLESS_COLORED);
+		editHotel.setIcon(VaadinIcons.EDIT);
 		
 		//grid
 		hotelGrid.addColumn(Hotel::getName).setCaption("Name");
