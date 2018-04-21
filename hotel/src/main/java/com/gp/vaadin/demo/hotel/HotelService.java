@@ -65,32 +65,6 @@ public class HotelService {
 
 	}
 
-	public synchronized List<Hotel> findAll(String stringFilter, int start, int maxresults) {
-		ArrayList<Hotel> arrayList = new ArrayList<>();
-		for (Hotel contact : hotels.values()) {
-			try {
-				boolean passesFilter = passesFilter(contact.toString(), stringFilter); 
-				if (passesFilter) {
-					arrayList.add(contact.clone());
-				}
-			} catch (CloneNotSupportedException ex) {
-				Logger.getLogger(HotelService.class.getName()).log(Level.SEVERE, null, ex);
-			}
-		}
-		Collections.sort(arrayList, new Comparator<Hotel>() {
-
-			@Override
-			public int compare(Hotel o1, Hotel o2) {
-				return (int) (o2.getId() - o1.getId());
-			}
-		});
-		int end = start + maxresults;
-		if (end > arrayList.size()) {
-			end = arrayList.size();
-		}
-		return arrayList.subList(start, end);
-	}
-
 	public synchronized long count() {
 		return hotels.size();
 	}
