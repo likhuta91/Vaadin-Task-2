@@ -64,7 +64,6 @@ public class CategoryView extends VerticalLayout implements View {
 		categoryGrid.setWidth(500,Unit.PIXELS);
 		categoryGrid.setHeightMode(HeightMode.UNDEFINED);
 		
-		
 		categoryGrid.asMultiSelect().addValueChangeListener(e -> {
 			if (e.getValue().size() == 1) {
 			
