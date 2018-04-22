@@ -80,6 +80,7 @@ public class CategoryView extends VerticalLayout implements View {
 			} else if (e.getValue().size() > 1) {
 				deleteCategory.setEnabled(true);
 				editCategory.setEnabled(false);
+				editForm.setVisible(false);
 			} else {
 			
 				deleteCategory.setEnabled(false);

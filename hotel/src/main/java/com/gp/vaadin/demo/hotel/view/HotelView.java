@@ -130,6 +130,7 @@ public class HotelView extends VerticalLayout implements View {
 			} else if (e.getValue().size() > 1) {
 				deleteHotel.setEnabled(true);
 				editHotel.setEnabled(false);
+				editForm.setVisible(false);
 			} else {
 				deleteHotel.setEnabled(false);
 				editHotel.setEnabled(false);
